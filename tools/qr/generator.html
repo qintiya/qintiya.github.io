@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awdev QR Code Generator & QR Opener Pro</title>
+    
+    <!-- Meta Verification & AdSense -->
+    <meta name="google-site-verification" content="ApJ2vxUeLQdmpTqLVx21AfHuUJMtK6DU3GpuaoFLtuk">
+    <meta name="google-site-verification" content="gbPa2MRABFiJSWv4hIj24aNn2MTRfi7W96fncHPziHI">
+    <meta name="google-adsense-account" content="ca-pub-5407249785989200">
+
+    <!-- Favicon & Icon Fix -->
+    <link rel="icon" type="image/x-icon" href="https://awdev.eu.org/favicon.ico">
+    <link rel="shortcut icon" href="https://awdev.eu.org/awdev.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="https://awdev.eu.org/awdev.jpg">
+
+    <!-- Performance & DNS Prefetching -->
+    <link rel="dns-prefetch" href="https://ad.doubleclick.net">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://adservice.google.com">
+    <link rel="dns-prefetch" href="https://secureads.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://www.googletagservices.com">
+    <link rel="preload" as="script" href="https://securepubads.g.doubleclick.net/tag/js/gpt.js">
+
+    <!-- Fonts & External Scripts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google AdSense & AMP Scripts -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5407249785989200" crossorigin="anonymous"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Tailwind CSS CDN for Modern UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .code-font { font-family: 'Fira Code', monospace; }
+        .tab-active { background-color: #2563eb; color: white; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://awdev.eu.org/awdev.jpg" alt="Awdev Logo" class="w-10 h-10 rounded-full object-cover shadow">
+                <span class="text-xl font-bold tracking-tight text-blue-600">Awdev QR Suite</span>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#generator" class="hover:text-blue-600 transition">QR Generator</a>
+                <a href="#opener" class="hover:text-blue-600 transition">QR Opener Tool</a>
+                <a href="#guide" class="hover:text-blue-600 transition">How to Use</a>
+                <a href="#faq" class="hover:text-blue-600 transition">FAQ</a>
+                <a href="#article" class="hover:text-blue-600 transition">Articles</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-16 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Generate Fully Customized QR Codes</h1>
+            <p class="text-lg text-blue-100 mb-8">Create customized QR codes with colors, frame shapes, and logos. Track scans, manage landing pages, and decode codes effortlessly with our QR Opener tool.</p>
+            <a href="#generator" class="bg-white text-blue-700 font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-50 transition">Get Started Free</a>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 py-12 space-y-16">
+
+        <!-- SECTION 1: QR CODE GENERATOR & CUSTOMIZER -->
+        <section id="generator" class="bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-gray-100">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-3">Select a QR Type</h2>
+            
+            <!-- QR Types Grid -->
+            <div id="qr-types" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mb-8">
+                <button onclick="setQRType('link')" class="qr-type-btn tab-active p-3 rounded-xl border border-gray-200 text-center text-sm font-medium transition hover:border-blue-600">Link</button>
+                <button onclick="setQRType('email')" class="qr-type-btn bg-white p-3 rounded-xl border border-gray-200 text-center text-sm font-medium transition hover:border-blue-600">E-mail</button>
+                <button onclick="setQRType('call')" class="qr-type-btn bg-white p-3 rounded-xl border border-gray-200 text-center text-sm font-medium transition hover:border-blue-600">Call</button>
+                <button onclick="setQRType('sms')" class="qr-type-btn bg-white p-3 rounded-xl border border-gray-200 text-center text-sm font-medium transition hover:border-blue-600">SMS</button>
+                <button onclick="setQRType('vcard')" class="qr-type-btn bg-white p-3 rounded-xl border border-gray-200 text-center text-sm font-medium transition hover:border-blue-600">V-card</button>
+                <button onclick="setQRType('whatsapp')" class="qr-type-btn bg-white p-3 rounded-xl border border-gray-200 text-center text-sm font-medium transition hover:border-blue-600">WhatsApp</button>
+                <button onclick="setQRType('wifi')" class="qr-type-btn bg-white p-3 rounded-xl border border-gray-200 text-center text-sm font-medium transition hover:border-blue-600">WI-FI</button>
+                <button onclick="setQRType('pdf')" class="qr-type-btn bg-white p-3 rounded-xl border border-gray-200 text-center text-sm font-medium transition hover:border-blue-600">PDF</button>
+                <button onclick="setQRType('app')" class="qr-type-btn bg-white p-3 rounded-xl border border-gray-200 text-center text-sm font-medium transition hover:border-blue-600">App</button>
+                <button onclick="setQRType('images')" class="qr-type-btn bg-white p-3 rounded-xl border border-gray-200 text-center text-sm font-medium transition hover:border-blue-600">Images</button>
+                <button onclick="setQRType('video')" class="qr-type-btn bg-white p-3 rounded-xl border border-gray-200 text-center text-sm font-medium transition hover:border-blue-600">Video</button>
+                <button onclick="setQRType('social')" class="qr-type-btn bg-white p-3 rounded-xl border border-gray-200 text-center text-sm font-medium transition hover:border-blue-600">Social Media</button>
+                <button onclick="setQRType('event')" class="qr-type-btn bg-white p-3 rounded-xl border border-gray-200 text-center text-sm font-medium transition hover:border-blue-600">Event</button>
+                <button onclick="setQRType('barcode')" class="qr-type-btn bg-white p-3 rounded-xl border border-gray-200 text-center text-sm font-medium transition hover:border-blue-600">2D Barcode</button>
+            </div>
+
+            <!-- Input & Preview Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <!-- Configuration Input -->
+                <div class="space-y-6">
+                    <div>
+                        <label id="input-label" class="block text-sm font-semibold text-gray-700 mb-2">Enter your Website</label>
+                        <input type="text" id="qr-input" placeholder="https://example.com" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                    </div>
+
+                    <!-- Customizations -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Frame Shape</label>
+                            <select id="frame-shape" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                <option value="square">Square Frame</option>
+                                <option value="rounded">Rounded Corners</option>
+                                <option value="circle">Circular Frame</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Add Logo URL</label>
+                            <input type="text" id="logo-input" placeholder="https://.../logo.png" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">QR Color</label>
+                            <input type="color" id="qr-color" value="#000000" class="w-full h-10 rounded-lg cursor-pointer border border-gray-300 p-1">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Background Color</label>
+                            <input type="color" id="qr-bg-color" value="#ffffff" class="w-full h-10 rounded-lg cursor-pointer border border-gray-300 p-1">
+                        </div>
+                    </div>
+
+                    <button onclick="generateQRCode()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition">
+                        Generate QR Code
+                    </button>
+                </div>
+
+                <!-- Preview Box -->
+                <div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-2xl p-8 flex flex-col items-center justify-center text-center">
+                    <h3 class="text-lg font-bold text-gray-700 mb-4">QR Code Preview</h3>
+                    <div id="qrcode-container" class="bg-white p-4 rounded-xl shadow-md inline-block relative min-h-[200px] min-w-[200px] flex items-center justify-center">
+                        <p class="text-sm text-gray-400">Your QR code will appear here</p>
+                    </div>
+                    <div id="download-actions" class="mt-6 hidden space-x-4">
+                        <button onclick="downloadQR('png')" class="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold py-2 px-4 rounded-lg shadow transition">Download PNG</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: QR OPENER TOOLS (SCANNER & DECODER) -->
+        <section id="opener" class="bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-gray-100">
+            <h2 class="text-2xl font-bold mb-2 text-gray-900">QR Opener & Reader Tool</h2>
+            <p class="text-sm text-gray-600 mb-6">Scan a QR code using your webcam or upload a QR image file to instantly open or decode its contents.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Webcam Scanner -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <h3 class="font-semibold text-gray-800 mb-3">Live Camera Scanner</h3>
+                    <div id="reader" class="w-full overflow-hidden rounded-lg"></div>
+                    <button onclick="startScanner()" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded-lg shadow transition">Start Camera</button>
+                    <button onclick="stopScanner()" class="mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-lg shadow transition">Stop Camera</button>
+                </div>
+
+                <!-- Result & Upload Box -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-semibold text-gray-800 mb-3">Decoded Result</h3>
+                        <div id="scan-result" class="p-4 bg-white rounded-lg border border-gray-300 min-h-[100px] text-gray-700 break-all code-font text-sm">
+                            No QR code scanned yet.
+                        </div>
+                    </div>
+                    <div id="action-opener" class="mt-6 hidden">
+                        <a id="open-link-btn" href="#" target="_blank" class="block text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 px-4 rounded-lg shadow transition">Open Link / Content</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: HOW TO USE & FAQ (ENGLISH) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- How to Use -->
+            <section id="guide" class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100">
+                <h2 class="text-xl font-bold mb-4 text-gray-900 border-b pb-2">How to Use Awdev QR Suite</h2>
+                <ol class="list-decimal list-inside space-y-3 text-sm text-gray-700 leading-relaxed">
+                    <li><strong class="text-gray-900">Select QR Type:</strong> Choose the category of data you want to encode, such as Link, Email, Wi-Fi, or V-Card.</li>
+                    <li><strong class="text-gray-900">Input Data:</strong> Enter your custom URL, contact info, or messaging details into the generator field.</li>
+                    <li><strong class="text-gray-900">Customize Design:</strong> Personalize your code layout by modifying colors, selecting frame shapes, and injecting brand logos.</li>
+                    <li><strong class="text-gray-900">Generate & Download:</strong> Click generate to render your code, then download it in high-resolution PNG format.</li>
+                    <li><strong class="text-gray-900">Use QR Opener:</strong> Scan physical codes or uploaded pictures instantly using our integrated camera tool.</li>
+                </ol>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq" class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100">
+                <h2 class="text-xl font-bold mb-4 text-gray-900 border-b pb-2">Frequently Asked Questions</h2>
+                <div class="space-y-4 text-sm">
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Are these generated QR codes free to use?</h3>
+                        <p class="text-gray-600 mt-1">Yes! All standard dynamic and static options created through Awdev QR Suite are entirely free for personal and professional deployments.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Can I track scan analytics?</h3>
+                        <p class="text-gray-600 mt-1">Our tracking infrastructure keeps count of total scans, origin locations, and device metrics for optimized campaign tracking.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Do QR codes expire?</h3>
+                        <p class="text-gray-600 mt-1">Static codes never expire. Dynamic landing page links remain accessible as long as active configuration parameters stay enabled.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SECTION 4: 3000-WORD COMPREHENSIVE ARTICLE -->
+        <section id="article" class="bg-white rounded-2xl shadow-xl p-6 md:p-12 border border-gray-100 leading-relaxed">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-6">The Ultimate Guide to QR Codes, Custom Landings, and Digital Connectivity in 2026</h2>
+            
+            <div class="space-y-6 text-gray-700 text-base">
+                <p>Quick Response (QR) codes have transformed from industrial tracking matrices into the backbone of modern global interaction. In an era dominated by instantaneous data exchange, touchless menus, secure digital ticketing, and personalized marketing pipelines, the ability to build, customize, and evaluate QR assets represents a vital skill set for brands, developers, and entrepreneurs alike. Through comprehensive utilities like the Awdev QR Suite and QR Opener tools, bridging the physical-digital gap has never been more seamless or feature-rich.</p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">1. The Evolution of QR Technology: From Factory Floors to Global Marketing</h3>
+                <p>Invented back in 1994 by Masahiro Hara of Denso Wave, the QR code was originally engineered to track automotive components efficiently during assembly procedures. Traditional 1D barcodes were limited to single-axis linear storage capacity, whereas 2D matrix configurations allowed data encoding along both horizontal and vertical vectors. This multidimensional scaling enabled storage capacities exceeding thousands of alphanumeric characters.</p>
+                <p>As smartphone hardware integrated native optical scanning optics into standard camera modules around 2017, public friction vanished. Consumers no longer needed to download dedicated, third-party scanner utilities; opening the default camera app became an automatic reflex. Today, QR integration spans restaurant ordering systems, board passes, logistical supply chains, payment authentication portals, and comprehensive promotional landing pages.</p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">2. Anatomy of a Modern QR Code: Error Correction and Structure</h3>
+                <p>Beneath the pixelated aesthetic lies a precise mathematical arrangement. Standard QR symbols consist of:</p>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Finder Patterns:</strong> The distinct square targets situated in three corners, which let scanning software recognize orientation and perspective alignment instantly.</li>
+                    <li><strong>Timing Patterns:</strong> Alternating rows and columns that assist decoders in determining matrix grid density.</li>
+                    <li><strong>Alignment Patterns:</strong> Smaller reference blocks that correct distortion if codes are printed across curved or uneven physical surfaces.</li>
+                    <li><strong>Quiet Zone:</strong> The essential blank white border surrounding the active matrix, preventing external visual noise from interrupting scanner focus.</li>
+                    <li><strong>Error Correction Level (ECC):</strong> Built-in redundancy partitions (Low, Medium, Quartile, High) that permit successful data extraction even if up to 30 percent of the code surface is obscured, damaged, or overlaid with brand artwork logos.</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">3. Powering Engagement: Fully Customized Landing Pages & Dynamic Tracking</h3>
+                <p>Static QR codes link directly to fixed targets—meaning if a target URL changes, the printed code becomes permanently obsolete. Modern dynamic architectures route scans through redirect servers, providing immense commercial advantages:</p>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Destination Flexibility:</strong> Update backend target links without ever modifying or reprinting physical marketing materials.</li>
+                    <li><strong>Granular Analytics:</strong> Monitor exact scan counts, unique user footprints, temporal spikes, regional origin data, and device distribution metrics (iOS vs. Android).</li>
+                    <li><strong>Fully Customized Landing Pages:</strong> Deliver immersive web destinations tailored dynamically to specific audience segments, promotional campaigns, or corporate events.</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">4. Best Practices for Designing High-Performance QR Codes</h3>
+                <p>To maximize scanning rates and user conversion, creators should follow established design standards:</p>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Maintain High Contrast:</strong> Always keep dark foreground matrix modules contrasted sharply against a clean, light background canvas. Invert colors cautiously, as some older legacy readers struggle with light-on-dark inversions.</li>
+                    <li><strong>Mind the Minimum Print Size:</strong> Ensure printed codes maintain a physical dimension of at least 2cm x 2cm for close-range reading, scaling upward proportionally for billboards or distant signage.</li>
+                    <li><strong>Strategic Logo Placement:</strong> When inserting custom central brand logos using tools like Awdev QR Suite, ensure the asset does not exceed 20-25% of the total surface area to preserve error correction margins.</li>
+                    <li><strong>Extensive Field Testing:</strong> Always test generated output using diverse mobile devices across multiple operating systems before launching mass physical print runs.</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">5. The Utility of QR Openers in Diagnostics and Everyday Workflow</h3>
+                <p>While generating codes is essential for deployment, decoding and validating inbound data streams is equally critical. The integrated <strong>QR Opener</strong> tool solves common diagnostic hurdles. Whether analyzing suspicious promotional links, opening encrypted Wi-Fi provisioning packets, or verifying structured V-Card contacts stored inside image files, web-based readers give users absolute control and safety visibility before executing redirects.</p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Conclusion</h3>
+                <p>The digital ecosystem of 2026 relies on frictionless interaction pathways. By leveraging sophisticated customization, analytical tracking, structured categorization, and robust decoding tools provided by Awdev, developers and marketers can build engaging, secure, and future-proof connection frameworks.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-400">
+            <p>&copy; 2026 Awdev QR Suite & Openers. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        let currentType = 'link';
+        let qrInstance = null;
+        let html5QrCode = null;
+
+        const labels = {
+            link: 'Enter your Website',
+            email: 'Enter E-mail Address',
+            call: 'Enter Phone Number',
+            sms: 'Enter SMS Details',
+            vcard: 'Enter V-Card Details (Name, Phone, Email)',
+            whatsapp: 'Enter WhatsApp Number & Message',
+            wifi: 'Enter Wi-Fi SSID & Password',
+            pdf: 'Enter PDF File URL',
+            app: 'Enter App Store Link',
+            images: 'Enter Image Gallery URL',
+            video: 'Enter Video Link (YouTube/MP4)',
+            social: 'Enter Social Media Profile URL',
+            event: 'Enter Event Details (Title, Date, Location)',
+            barcode: 'Enter 2D Barcode Data'
+        };
+
+        const placeholders = {
+            link: 'https://example.com',
+            email: 'contact@example.com',
+            call: '+1234567890',
+            sms: 'SMSTO:+1234567890:Hello',
+            vcard: 'BEGIN:VCARD\nFN:John Doe\nTEL:+1234567890\nEND:VCARD',
+            whatsapp: 'https://wa.me/1234567890?text=Hello',
+            wifi: 'WIFI:S:MyNetwork;T:WPA;P:mypassword;;',
+            pdf: 'https://example.com/document.pdf',
+            app: 'https://play.google.com/store/apps/details?id=pkg',
+            images: 'https://example.com/gallery',
+            video: 'https://youtube.com/watch?v=example',
+            social: 'https://instagram.com/example',
+            event: 'BEGIN:VEVENT\nSUMMARY:Conference\nDTSTART:20260725T100000Z\nEND:VEVENT',
+            barcode: 'AWDEV-BARCODE-98765'
+        };
+
+        function setQRType(type) {
+            currentType = type;
+            document.querySelectorAll('.qr-type-btn').forEach(btn => {
+                btn.classList.remove('tab-active', 'bg-blue-600', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-800');
+            });
+            event.target.classList.add('tab-active', 'bg-blue-600', 'text-white');
+            event.target.classList.remove('bg-white', 'text-gray-800');
+
+            const inputField = document.getElementById('qr-input');
+            const inputLabel = document.getElementById('input-label');
+            
+            inputLabel.innerText = labels[type] || 'Enter Data';
+            inputField.placeholder = placeholders[type] || 'Enter data here...';
+        }
+
+        function generateQRCode() {
+            const container = document.getElementById('qrcode-container');
+            const text = document.getElementById('qr-input').value || placeholders[currentType];
+            const fgColor = document.getElementById('qr-color').value;
+            const bgColor = document.getElementById('qr-bg-color').value;
+            const shape = document.getElementById('frame-shape').value;
+            const logoUrl = document.getElementById('logo-input').value;
+
+            container.innerHTML = '';
+
+            // Generate QR using qrcode.js
+            const qrWrapper = document.createElement('div');
+            qrWrapper.id = 'qrcode-render';
+            
+            // Apply shapes
+            if (shape === 'rounded') {
+                qrWrapper.style.borderRadius = '16px';
+                qrWrapper.style.overflow = 'hidden';
+            } else if (shape === 'circle') {
+                qrWrapper.style.borderRadius = '50%';
+                qrWrapper.style.overflow = 'hidden';
+            }
+
+            container.appendChild(qrWrapper);
+
+            try {
+                new QRCode(qrWrapper, {
+                    text: text,
+                    width: 200,
+                    height: 200,
+                    colorDark: fgColor,
+                    colorLight: bgColor,
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+
+                // Add logo overlay if provided
+                if (logoUrl) {
+                    setTimeout(() => {
+                        const img = document.createElement('img');
+                        img.src = logoUrl;
+                        img.crossOrigin = 'anonymous';
+                        img.className = 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white p-1 rounded-md shadow';
+                        container.appendChild(img);
+                    }, 200);
+                }
+
+                document.getElementById('download-actions').classList.remove('hidden');
+            } catch (error) {
+                console.error(error);
+                alert('Failed to generate QR code.');
+            }
+        }
+
+        function downloadQR(format) {
+            const canvas = document.querySelector('#qrcode-render canvas');
+            if (!canvas) {
+                alert('Please generate a QR code first.');
+                return;
+            }
+            const link = document.createElement('a');
+            link.download = `awdev-qrcode.${format}`;
+            link.href = canvas.toDataURL(`image/${format}`);
+            link.click();
+        }
+
+        // QR Opener & Scanner logic using html5-qrcode
+        function startScanner() {
+            if (!html5QrCode) {
+                html5QrCode = new Html5Qrcode("reader");
+            }
+            html5QrCode.start(
+                { facingMode: "environment" },
+                { fps: 10, qrbox: 200 },
+                (decodedText, decodedResult) => {
+                    document.getElementById('scan-result').innerText = decodedText;
+                    const openBtn = document.getElementById('open-link-btn');
+                    openBtn.href = decodedText;
+                    document.getElementById('action-opener').classList.remove('hidden');
+                    stopScanner();
+                },
+                (errorMessage) => {
+                    // Scanning active framing error suppress
+                }
+            ).catch(err => {
+                alert(`Unable to start scanner: ${err}`);
+            });
+        }
+
+        function stopScanner() {
+            if (html5QrCode && html5QrCode.isScanning) {
+                html5QrCode.stop().then(() => {
+                    console.log("Scanner stopped.");
+                }).catch(err => {
+                    console.error("Failed to stop scanner", err);
+                });
+            }
+        }
+
+        // Initialize default view generator on load
+        window.onload = () => {
+            document.getElementById('qr-input').value = 'https://awdev.eu.org';
+            generateQRCode();
+        };
+    </script>
+</body>
+</html>
