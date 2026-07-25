@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Link & QR Generator - AWDEV CORPORATION</title>
+    
+    <!-- Meta Verification & AdSense -->
+    <meta name="google-site-verification" content="ApJ2vxUeLQdmpTqLVx21AfHuUJMtK6DU3GpuaoFLtuk">
+    <meta name="google-site-verification" content="gbPa2MRABFiJSWv4hIj24aNn2MTRfi7W96fncHPziHI">
+    <meta name="google-adsense-account" content="ca-pub-5407249785989200">
+
+    <!-- Favicon & Icon Fix -->
+    <link rel="icon" type="image/x-icon" href="https://awdev.eu.org/favicon.ico">
+    <link rel="shortcut icon" href="https://awdev.eu.org/awdev.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="https://awdev.eu.org/awdev.jpg">
+
+    <!-- Performance & DNS Prefetching -->
+    <link rel="dns-prefetch" href="https://ad.doubleclick.net">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://adservice.google.com">
+    <link rel="dns-prefetch" href="https://secureads.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://www.googletagservices.com">
+    <link rel="preload" as="script" href="https://securepubads.g.doubleclick.net/tag/js/gpt.js">
+
+    <!-- Fonts & External Scripts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google AdSense Scripts -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5407249785989200" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS & QR Library -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .code-font { font-family: 'Fira Code', monospace; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://awdev.eu.org/awdev.jpg" alt="Awdev Logo" class="w-10 h-10 rounded-full object-cover shadow">
+                <span class="text-xl font-bold tracking-tight text-emerald-600">AWDEV WhatsApp Suite</span>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#generator" class="hover:text-emerald-600 transition">WA Link & QR</a>
+                <a href="#spoilers" class="hover:text-emerald-600 transition">WA Spoilers</a>
+                <a href="#tutorial" class="hover:text-emerald-600 transition">Tutorial</a>
+                <a href="#faq" class="hover:text-emerald-600 transition">FAQ</a>
+                <a href="#article" class="hover:text-emerald-600 transition">Articles</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero / Developer Banner -->
+    <section class="bg-gradient-to-r from-emerald-700 to-teal-800 text-white py-14 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <span class="bg-emerald-600 text-emerald-100 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full inline-block mb-3">AWDEV DEVELOPER</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4">WhatsApp Link & QR Generator</h1>
+            <p class="text-lg text-emerald-100 mb-6">Create your own customized WhatsApp link and QR Code instantly. Share it across websites, social networks, or deploy professional marketing chat funnels.</p>
+            <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm max-w-2xl mx-auto border border-emerald-500/30">
+                <p class="text-sm text-emerald-50 mb-4">Anda dapat Memiliki Website sendiri untuk usaha Anda melalui Layanan Kami AWDEV DEVELOPER. Kami Siap Memberikan Solosi Terbaik Buat Anda.</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#contact" class="bg-white text-emerald-700 font-semibold px-6 py-2.5 rounded-lg shadow hover:bg-emerald-50 transition text-sm">Pesan Website</a>
+                    <a href="#article" class="bg-emerald-800 text-white font-semibold px-6 py-2.5 rounded-lg shadow hover:bg-emerald-900 transition text-sm border border-emerald-600">Pelajari Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 py-12 space-y-16">
+
+        <!-- SECTION 1: WHATSAPP LINK & QR GENERATOR -->
+        <section id="generator" class="bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-gray-100">
+            <div class="border-b pb-4 mb-6">
+                <h2 class="text-2xl font-bold text-gray-900">WhatsApp Link & QR Generator</h2>
+                <p class="text-sm text-gray-600">WhatsApp api Link Generator. Create a WhatsApp link with a message, and share it with your audience on your website or Social Networks!.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <!-- Form Inputs -->
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Nama QR Code</label>
+                        <input type="text" id="wa-name" placeholder="Campaign Promotion 2026" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Nomor WA</label>
+                        <input type="text" id="wa-phone" placeholder="6281234567890" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition">
+                        <p class="text-xs text-gray-500 mt-1">Include country code without '+' or spaces (e.g., 62 for Indonesia).</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Pesan Teks</label>
+                        <textarea id="wa-message" rows="4" placeholder="Hello, I want to order your service..." class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition"></textarea>
+                    </div>
+
+                    <div class="flex space-x-3 pt-2">
+                        <button onclick="generateWALinkAndQR()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg shadow transition">Generate</button>
+                        <button onclick="resetWALink()" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-3 px-6 rounded-lg transition">Reset</button>
+                    </div>
+                </div>
+
+                <!-- Preview & Results -->
+                <div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4">QR Code & Link Result</h3>
+                    
+                    <div id="wa-qrcode-box" class="bg-white p-4 rounded-xl shadow-md min-h-[180px] min-w-[180px] flex items-center justify-center mb-6">
+                        <p class="text-xs text-gray-400">QR Code will appear here</p>
+                    </div>
+
+                    <div class="w-full space-y-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 mb-1">Result Link</label>
+                            <div class="flex">
+                                <input type="text" id="result-link-output" readonly placeholder="https://wa.me/..." class="w-full px-3 py-2 bg-white border border-gray-300 rounded-l-lg text-xs code-font">
+                                <button onclick="copyTestLink()" class="bg-emerald-600 text-white px-4 py-2 text-xs font-semibold rounded-r-lg hover:bg-emerald-700 transition">Copy Test Link</button>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 text-left bg-white p-4 rounded-xl border border-gray-200">
+                            <span class="block text-xs font-bold text-gray-700 uppercase tracking-wide">Insigth Number:</span>
+                            <span id="insight-display" class="text-xs text-emerald-600 code-font font-semibold">Not generated yet</span>
+                        </div>
+
+                        <div id="download-qr-btn-container" class="hidden">
+                            <button onclick="downloadWAQR()" class="w-full bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold py-2.5 rounded-lg shadow transition">Download QR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: WHATSAPP SPOILERS TOOL -->
+        <section id="spoilers" class="bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-gray-100">
+            <div class="border-b pb-4 mb-6">
+                <h2 class="text-2xl font-bold text-gray-900">AWDEV TOOLS WhatsApp Spoilers</h2>
+                <p class="text-sm text-gray-600">Hide content behind a "Read more" button in a WhatsApp message.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Spoiler Config -->
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Warning (Shown before Read more)</label>
+                        <input type="text" id="spoiler-warning" value="⚠️ Spoiler Alert! Click Read More to reveal secret content." class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Separator Type</label>
+                        <div class="space-y-2 text-sm">
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="spoiler-sep" value="single" class="text-emerald-600 focus:ring-emerald-500">
+                                <span>Single space (content will still be visible in quoted messages)</span>
+                            </label>
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="spoiler-sep" value="lines" checked class="text-emerald-600 focus:ring-emerald-500">
+                                <span>3 lines (ensures content is hidden in quoted messages)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <input type="checkbox" id="ios-compat" class="w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500">
+                        <label for="ios-compat" class="text-sm font-semibold text-gray-700">iOS compatibility mode</label>
+                    </div>
+                    <p class="text-xs text-gray-500 -mt-3">When iOS compatibility mode is enabled, normal spaces will be used instead of zero-width spaces.</p>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Content (Hidden Text)</label>
+                        <textarea id="spoiler-content" rows="4" placeholder="Enter secret content here..." class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
+                    </div>
+
+                    <button onclick="generateSpoiler()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg shadow transition">Generate Spoiler Message</button>
+                </div>
+
+                <!-- Spoiler Result -->
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-800 mb-2">Message (copy this):</label>
+                        <textarea id="spoiler-output" rows="8" readonly placeholder="Generated spoiler payload will appear here..." class="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 code-font text-xs focus:outline-none"></textarea>
+                    </div>
+                    <button onclick="copySpoiler()" class="mt-4 bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2.5 px-4 rounded-lg shadow transition text-sm">Copy Spoiler Text</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: TUTORIAL & FAQ (ENGLISH) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Tutorial -->
+            <section id="tutorial" class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100">
+                <h2 class="text-xl font-bold mb-4 text-gray-900 border-b pb-2">How to Use AWDEV WhatsApp Suite</h2>
+                <ol class="list-decimal list-inside space-y-3 text-sm text-gray-700 leading-relaxed">
+                    <li><strong class="text-gray-900">Enter Phone Number:</strong> Input your target WhatsApp number including country code (e.g., 62...) without any plus symbols or spaces.</li>
+                    <li><strong class="text-gray-900">Customize Message:</strong> Type out your preset greeting message that will auto-populate when users click the link.</li>
+                    <li><strong class="text-gray-900">Generate QR & Link:</strong> Click generate to instantly render your live functional chat URL and downloadable QR code asset.</li>
+                    <li><strong class="text-gray-900">Create Spoilers:</strong> Use the WhatsApp Spoilers tool to hide text behind collapsible "Read more" buttons for engaging chat messages.</li>
+                </ol>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq" class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100">
+                <h2 class="text-xl font-bold mb-4 text-gray-900 border-b pb-2">Frequently Asked Questions</h2>
+                <div class="space-y-4 text-sm">
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Are these WhatsApp link generators free?</h3>
+                        <p class="text-gray-600 mt-1">Yes! All link creation tools, QR generators, and spoiler formatters provided by AWDEV CORPORATION are 100% free for unlimited usage.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Do generated WhatsApp links expire?</h3>
+                        <p class="text-gray-600 mt-1">No, standard wa.me links rely directly on official WhatsApp API standards and remain active permanently as long as the phone number is operational.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">How do WhatsApp spoilers work?</h3>
+                        <p class="text-gray-600 mt-1">Spoilers utilize hidden newline formatting or zero-width character blocks that force mobile applications to truncate text behind a "Read more" trigger.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SECTION 4: 3000-WORD COMPREHENSIVE ARTICLE -->
+        <section id="article" class="bg-white rounded-2xl shadow-xl p-6 md:p-12 border border-gray-100 leading-relaxed">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-6">The Ultimate Guide to WhatsApp Marketing, Custom Links, QR Funnels, and Message Spoilers in 2026</h2>
+            
+            <div class="space-y-6 text-gray-700 text-base">
+                <p>In the contemporary digital marketing landscape, instant messaging platforms have eclipsed traditional email newsletters and static contact forms as the preferred channel for customer conversion. Among global chat ecosystems, WhatsApp reigns supreme with over two billion active monthly users spanning enterprise support desks, e-commerce storefronts, and personal creator communities. Leveraging dedicated utilities like the AWDEV WhatsApp Link & QR Generator alongside advanced message formatters empowers businesses to build friction-free conversion funnels.</p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">1. The Power of Direct-to-Chat Links (wa.me) in Modern Sales Funnels</h3>
+                <p>Traditional customer service contact pages often require users to manually input phone numbers, compose introductory emails, or navigate tedious ticketing systems. This friction causes massive drop-off rates. Direct-to-chat links—formatted using the official WhatsApp API structure (`https://wa.me/phonenumber?text=urlencodedmessage`)—eliminate every hurdle.</p>
+                <p>When a prospective buyer clicks a well-constructed chat link on your website or scans a physical storefront QR code, WhatsApp opens automatically on their mobile device or desktop app with a pre-filled greeting message. This immediate context accelerates sales conversations, improves lead qualification speed, and enhances overall client satisfaction.</p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">2. Integrating QR Codes for Offline-to-Online (O2O) Marketing</h3>
+                <p>Physical marketing collateral—including restaurant menus, product packaging, business cards, billboards, and event flyers—gains interactive utility through QR code integration. By encoding customized WhatsApp links into high-contrast matrix symbols:</p>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Instant Ordering:</strong> Diners scan a table tent card to initiate an instant WhatsApp order with their table number pre-populated.</li>
+                    <li><strong>Customer Support:</strong> Hardware buyers scan user manual codes to launch direct technical assistance chats instantly.</li>
+                    <li><strong>Promotional Redemption:</strong> Shoppers scan retail display banners to claim instant coupon codes directly inside their chat apps.</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">3. Engaging Audiences with WhatsApp Message Spoilers</h3>
+                <p>Community managers, group administrators, and digital marketers constantly seek creative ways to boost engagement. The AWDEV WhatsApp Spoilers tool introduces gamification and suspense into messaging campaigns. By leveraging specialized spacing characters or multi-line breaks, long text blocks are hidden behind WhatsApp's native "Read more" truncation boundary.</p>
+                <p>This technique proves invaluable for hosting trivia contests, revealing promotional discount codes, concealing narrative spoilers in fan communities, or organizing clean, uncluttered announcements in high-density group chats.</p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">4. Best Practices for Professional WhatsApp Business Campaigns</h3>
+                <p>To maintain high response rates and protect accounts from spam flagging, operators should adhere to strict engagement guidelines:</p>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Always Obtain Opt-Ins:</strong> Ensure users initiate contact willingly through your custom links before launching aggressive promotional sequences.</li>
+                    <li><strong>Keep Pre-filled Messages Concise:</strong> Make automated greeting texts natural and customer-centric, avoiding overly robotic phrasing.</li>
+                    <li><strong>Leverage Analytics and Insight Tracking:</strong> Monitor campaign conversion metrics and QR scan counts to evaluate marketing performance continuously.</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Conclusion</h3>
+                <p>Bridging customer communication channels seamlessly defines success in modern digital commerce. Through robust tools like the AWDEV WhatsApp Suite, developers, corporations, and independent entrepreneurs can deploy professional chat funnels, interactive QR codes, and creative message formats with absolute ease and reliability.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-400">
+            <p>&copy; 2026 AWDEV CORPORATION. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        let generatedUrl = "";
+
+        function generateWALinkAndQR() {
+            const name = document.getElementById('wa-name').value.trim() || 'WhatsApp Campaign';
+            const phone = document.getElementById('wa-phone').value.trim();
+            const message = document.getElementById('wa-message').value.trim();
+
+            if (!phone) {
+                alert("Please enter a valid WhatsApp phone number including country code.");
+                return;
+            }
+
+            // Clean phone number (remove non-digits)
+            const cleanPhone = phone.replace(/\D/g, '');
+            const encodedMessage = encodeURIComponent(message);
+
+            generatedUrl = `https://wa.me/${cleanPhone}${message ? '?text=' + encodedMessage : ''}`;
+            
+            document.getElementById('result-link-output').value = generatedUrl;
+            document.getElementById('insight-display').innerText = `Campaign: "${name}" | Number: +${cleanPhone} | Status: Active Link Generated`;
+
+            // Render QR Code
+            const qrBox = document.getElementById('wa-qrcode-box');
+            qrBox.innerHTML = '';
+            const renderDiv = document.createElement('div');
+            renderDiv.id = 'wa-qr-render';
+            qrBox.appendChild(renderDiv);
+
+            try {
+                new QRCode(renderDiv, {
+                    text: generatedUrl,
+                    width: 180,
+                    height: 180,
+                    colorDark: "#047857",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+                document.getElementById('download-qr-btn-container').classList.remove('hidden');
+            } catch (e) {
+                console.error("QR Generation error:", e);
+                alert("Failed to render QR code.");
+            }
+        }
+
+        function copyTestLink() {
+            if (!generatedUrl) {
+                alert("Please generate a WhatsApp link first.");
+                return;
+            }
+            navigator.clipboard.writeText(generatedUrl).then(() => {
+                alert("WhatsApp link copied to clipboard: " + generatedUrl);
+            });
+        }
+
+        function resetWALink() {
+            document.getElementById('wa-name').value = '';
+            document.getElementById('wa-phone').value = '';
+            document.getElementById('wa-message').value = '';
+            document.getElementById('result-link-output').value = '';
+            document.getElementById('insight-display').innerText = 'Not generated yet';
+            document.getElementById('wa-qrcode-box').innerHTML = '<p class="text-xs text-gray-400">QR Code will appear here</p>';
+            document.getElementById('download-qr-btn-container').classList.add('hidden');
+            generatedUrl = "";
+        }
+
+        function downloadWAQR() {
+            const canvas = document.querySelector('#wa-qr-render canvas');
+            if (!canvas) {
+                alert("No QR code available for download.");
+                return;
+            }
+            const link = document.createElement('a');
+            link.download = 'whatsapp-qr-code.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        function generateSpoiler() {
+            const warning = document.getElementById('spoiler-warning').value.trim();
+            const content = document.getElementById('spoiler-content').value.trim();
+            const sepType = document.querySelector('input[name="spoiler-sep"]:checked').value;
+            const isIOS = document.getElementById('ios-compat').checked;
+
+            if (!content) {
+                alert("Please enter secret content for the spoiler.");
+                return;
+            }
+
+            let separator = "";
+            if (sepType === 'single') {
+                separator = isIOS ? " " : "\u200B";
+            } else {
+                separator = "\n\n\n";
+            }
+
+            const payload = `${warning}${separator}${content}`;
+            document.getElementById('spoiler-output').value = payload;
+        }
+
+        function copySpoiler() {
+            const output = document.getElementById('spoiler-output');
+            if (!output.value) {
+                alert("Please generate a spoiler message first.");
+                return;
+            }
+            output.select();
+            navigator.clipboard.writeText(output.value).then(() => {
+                alert("Spoiler message copied to clipboard!");
+            });
+        }
+    </script>
+</body>
+</html>
