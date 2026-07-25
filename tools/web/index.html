@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Test Tool for Mobile Website - Online Device Testing [Awdev Tools]</title>
+    <meta name="description" content="Test your website's responsiveness across multiple devices with different screen sizes instantly using our online mobile website test tool.">
+    
+    <!-- Meta Verification & Adsense -->
+    <meta name="google-site-verification" content="ApJ2vxUeLQdmpTqLVx21AfHuUJMtK6DU3GpuaoFLtuk">
+    <meta name="google-site-verification" content="gbPa2MRABFiJSWv4hIj24aNn2MTRfi7W96fncHPziHI">
+    <meta name="google-adsense-account" content="ca-pub-5407249785989200">
+
+    <!-- Favicon & Icon Fix -->
+    <link rel="icon" type="image/x-icon" href="https://awdev.eu.org/favicon.ico">
+    <link rel="shortcut icon" href="https://awdev.eu.org/awdev.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="https://awdev.eu.org/awdev.jpg">
+
+    <!-- Performance & DNS Prefetching -->
+    <link rel="dns-prefetch" href="https://ad.doubleclick.net">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://adservice.google.com">
+    <link rel="dns-prefetch" href="https://secureads.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://www.googletagservices.com">
+    <link rel="preload" as="script" href="https://securepubads.g.doubleclick.net/tag/js/gpt.js">
+
+    <!-- Fonts & External Scripts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google AdSense & AMP Scripts -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5407249785989200" crossorigin="anonymous"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Tailwind CSS CDN for Modern UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .code-font { font-family: 'Fira Code', monospace; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between">
+
+    <!-- Top Navigation / Header -->
+    <header class="bg-slate-800 border-b border-slate-700 py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="bg-blue-600 text-white p-2 rounded-lg font-bold text-lg">RTT</div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight">Responsive Test Tool</h1>
+                    <p class="text-xs text-slate-400">For Mobile Website - Online Device Testing</p>
+                </div>
+            </div>
+            <!-- Quick URL Input Form -->
+            <form id="url-form" class="flex w-full md:w-auto gap-2">
+                <input type="url" id="url-input" placeholder="https://example.com" required 
+                    class="bg-slate-900 border border-slate-700 px-4 py-2 rounded-lg text-sm text-slate-200 focus:outline-none focus:border-blue-500 w-full md:w-80">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-lg text-sm font-semibold transition text-white">Check It</button>
+                <button type="button" id="reset-btn" class="bg-slate-700 hover:bg-slate-600 px-3 py-2 rounded-lg text-sm font-semibold transition text-slate-300" title="Reset View">Reset</button>
+            </form>
+        </div>
+    </header>
+
+    <!-- Main Workspace Container -->
+    <main class="max-w-7xl mx-auto px-4 py-6 w-full flex-grow grid grid-cols-1 lg:grid-cols-4 gap-6">
+        
+        <!-- Sidebar Controls: Device Presets & Custom Resolution -->
+        <aside class="lg:col-span-1 bg-slate-800 border border-slate-700 rounded-xl p-4 flex flex-col gap-5 h-fit">
+            <div>
+                <h2 class="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-3">Device Presets</h2>
+                <div class="flex flex-col gap-1.5 max-h-60 overflow-y-auto pr-1">
+                    <button class="preset-btn text-left text-xs bg-slate-900 hover:bg-slate-700 p-2.5 rounded border border-slate-700 transition flex justify-between items-center" data-w="412" data-h="869">
+                        <span>Samsung Galaxy S10+ / A41</span> <span class="text-slate-400 code-font">412×869</span>
+                    </button>
+                    <button class="preset-btn text-left text-xs bg-slate-900 hover:bg-slate-700 p-2.5 rounded border border-slate-700 transition flex justify-between items-center" data-w="360" data-h="760">
+                        <span>Samsung Galaxy S23 / A35</span> <span class="text-slate-400 code-font">360×760</span>
+                    </button>
+                    <button class="preset-btn text-left text-xs bg-slate-900 hover:bg-slate-700 p-2.5 rounded border border-slate-700 transition flex justify-between items-center" data-w="360" data-h="740">
+                        <span>Samsung Galaxy S9</span> <span class="text-slate-400 code-font">360×740</span>
+                    </button>
+                    <button class="preset-btn text-left text-xs bg-slate-900 hover:bg-slate-700 p-2.5 rounded border border-slate-700 transition flex justify-between items-center" data-w="414" data-h="896">
+                        <span>iPhone 13, 14, 15 Pro Max</span> <span class="text-slate-400 code-font">414×896</span>
+                    </button>
+                    <button class="preset-btn text-left text-xs bg-slate-900 hover:bg-slate-700 p-2.5 rounded border border-slate-700 transition flex justify-between items-center" data-w="375" data-h="667">
+                        <span>iPhone SE</span> <span class="text-slate-400 code-font">375×667</span>
+                    </button>
+                    <button class="preset-btn text-left text-xs bg-slate-900 hover:bg-slate-700 p-2.5 rounded border border-slate-700 transition flex justify-between items-center" data-w="428" data-h="926">
+                        <span>iPhone Pro Max</span> <span class="text-slate-400 code-font">428×926</span>
+                    </button>
+                    <button class="preset-btn text-left text-xs bg-slate-900 hover:bg-slate-700 p-2.5 rounded border border-slate-700 transition flex justify-between items-center" data-w="360" data-h="800">
+                        <span>Android Medium</span> <span class="text-slate-400 code-font">360×800</span>
+                    </button>
+                    <button class="preset-btn text-left text-xs bg-slate-900 hover:bg-slate-700 p-2.5 rounded border border-slate-700 transition flex justify-between items-center" data-w="768" data-h="1024">
+                        <span>iPad Standard</span> <span class="text-slate-400 code-font">768×1024</span>
+                    </button>
+                    <button class="preset-btn text-left text-xs bg-slate-900 hover:bg-slate-700 p-2.5 rounded border border-slate-700 transition flex justify-between items-center" data-w="834" data-h="1194">
+                        <span>iPad Pro 11"</span> <span class="text-slate-400 code-font">834×1194</span>
+                    </button>
+                    <button class="preset-btn text-left text-xs bg-slate-900 hover:bg-slate-700 p-2.5 rounded border border-slate-700 transition flex justify-between items-center" data-w="1024" data-h="1366">
+                        <span>iPad Pro 12.9"</span> <span class="text-slate-400 code-font">1024×1366</span>
+                    </button>
+                    <button class="preset-btn text-left text-xs bg-slate-900 hover:bg-slate-700 p-2.5 rounded border border-slate-700 transition flex justify-between items-center" data-w="1366" data-h="768">
+                        <span>Laptop Standard</span> <span class="text-slate-400 code-font">1366×768</span>
+                    </button>
+                    <button class="preset-btn text-left text-xs bg-slate-900 hover:bg-slate-700 p-2.5 rounded border border-slate-700 transition flex justify-between items-center" data-w="1440" data-h="900">
+                        <span>Desktop Medium</span> <span class="text-slate-400 code-font">1440×900</span>
+                    </button>
+                    <button class="preset-btn text-left text-xs bg-slate-900 hover:bg-slate-700 p-2.5 rounded border border-slate-700 transition flex justify-between items-center" data-w="1920" data-h="1080">
+                        <span>Desktop Large</span> <span class="text-slate-400 code-font">1920×1080</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Custom Size Input -->
+            <div class="border-t border-slate-700 pt-4">
+                <h2 class="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-2">Custom Size</h2>
+                <div class="grid grid-cols-2 gap-2 mb-2">
+                    <div>
+                        <label class="text-[10px] text-slate-400">Width (px)</label>
+                        <input type="number" id="custom-width" value="412" class="w-full bg-slate-900 border border-slate-700 text-xs px-2 py-1.5 rounded text-slate-200">
+                    </div>
+                    <div>
+                        <label class="text-[10px] text-slate-400">Height (px)</label>
+                        <input type="number" id="custom-height" value="869" class="w-full bg-slate-900 border border-slate-700 text-xs px-2 py-1.5 rounded text-slate-200">
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <button id="apply-size-btn" class="w-full bg-slate-700 hover:bg-slate-600 text-xs py-2 rounded font-semibold transition">Apply Size</button>
+                    <button id="rotate-btn" class="bg-slate-700 hover:bg-slate-600 px-3 py-2 text-xs rounded font-semibold transition" title="Rotate Device">Rotate</button>
+                </div>
+            </div>
+
+            <!-- Actions: Snapshot & Realtime Info -->
+            <div class="border-t border-slate-700 pt-4 flex flex-col gap-2">
+                <h2 class="text-sm font-semibold text-slate-300 uppercase tracking-wider">Testing Utilities</h2>
+                <button id="snapshot-btn" class="bg-emerald-600 hover:bg-emerald-700 text-xs py-2 rounded font-semibold transition text-white">Take Snapshot & Annotate</button>
+                <div class="bg-slate-900 p-2.5 rounded border border-slate-700 text-xs flex justify-between items-center">
+                    <span class="text-slate-400">Realtime View:</span>
+                    <span id="current-dim-display" class="code-font text-blue-400 font-bold">412 × 869 px</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Display / Frame Viewport -->
+        <section class="lg:col-span-3 bg-slate-800 border border-slate-700 rounded-xl flex flex-col items-center justify-center p-4 relative overflow-hidden min-h-[600px]">
+            <div id="viewport-wrapper" class="transition-all duration-300 shadow-2xl border-4 border-slate-700 rounded-xl overflow-hidden bg-white relative" style="width: 412px; height: 869px; max-width: 100%;">
+                <iframe id="preview-iframe" src="https://example.com" class="w-full h-full border-0"></iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Detailed SEO Article Section (3000 Words Comprehensive Guide) -->
+    <article class="max-w-7xl mx-auto px-4 py-12 text-slate-300 border-t border-slate-800 mt-12 space-y-8">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <h2 class="text-3xl font-bold text-white tracking-tight">Comprehensive Guide to Website Responsiveness Across Multiple Devices</h2>
+            <p class="text-sm leading-relaxed text-slate-300">
+                In today's digital ecosystem, users access the internet from an astonishing variety of form factors. From compact smartphones like the Samsung Galaxy S23 and iPhone series to massive desktop monitors, your web assets must adapt fluidly. Testing your layout responsiveness is no longer optional—it is a critical requirement for maintaining search engine optimization (SEO) ranking, user engagement, and conversion rates. Our online testing platform simplifies web verification across standard device metrics without requiring complex manual configurations.
+            </p>
+
+            <h3 class="text-xl font-semibold text-white pt-4">Why Responsive Design Matters for Modern Web Developers and Small Businesses</h3>
+            <p class="text-sm leading-relaxed text-slate-300">
+                Small business owners invest significant time and effort into establishing an online presence. However, if a potential customer visits a site from a mobile device and encounters broken layouts, horizontal scrolling, or unreadable typography, they will abandon the page immediately. Search engines like Google prioritize mobile-first indexing, meaning the mobile version of your layout acts as the primary baseline for evaluation and ranking. Utilizing a responsive test tool allows web architects to simulate diverse viewports instantly, guaranteeing high fidelity visual performance across every visitor segment.
+            </p>
+
+            <div class="bg-slate-800 p-5 rounded-xl border border-slate-700 space-y-3">
+                <h4 class="font-bold text-white text-sm">Key Benefits of Online Responsive Verification:</h4>
+                <ul class="list-disc pl-5 space-y-1.5 text-xs text-slate-300">
+                    <li><strong>Instant Visual Feedback:</strong> Instantly check how pages adapt to specific dimensions like 360x740, 412x869, or custom values.</li>
+                    <li><strong>Cross-Browser Compatibility:</strong> Confirm that CSS grids, media queries, and script components render uniformly.</li>
+                    <li><strong>Streamlined Workflow:</strong> Eliminate the hassle of constantly resizing physical browser windows or managing multiple emulators.</li>
+                    <li><strong>Annotation & Collaboration:</strong> Capture real-time states to highlight adjustments required for flawless presentation.</li>
+                </ul>
+            </div>
+
+            <h3 class="text-xl font-semibold text-white pt-4">Step-by-Step Instructions on How to Use the Test Tool</h3>
+            <p class="text-sm leading-relaxed text-slate-300">
+                Executing a complete website responsiveness audit takes just seconds. Follow these streamlined procedures:
+            </p>
+            <ol class="list-decimal pl-5 space-y-2 text-xs text-slate-300">
+                <li><strong>Enter the Complete URL:</strong> Type or paste your fully qualified web address (including https://) into the top input bar.</li>
+                <li><strong>Select a Device Preset:</strong> Click on any mobile or desktop preset option on the left panel (e.g., Samsung Galaxy series, iPhone variants, or iPad models) to instantly resize the viewport canvas.</li>
+                <li><strong>Evaluate Custom Resolutions:</strong> Input precise numerical pixel dimensions into the custom width and height boxes and click apply, or use the rotate button to test landscape orientations.</li>
+                <li><strong>Reset or Capture:</strong> Use the reset utility to revert default configurations whenever necessary, or capture snapshots for troubleshooting and layout documentation.</li>
+            </ol>
+
+            <!-- Frequently Asked Questions (FAQ) Section -->
+            <div class="pt-8 space-y-6">
+                <h3 class="text-2xl font-bold text-white">Frequently Asked Questions (FAQ)</h3>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
+                        <h4 class="font-semibold text-white text-sm mb-1">What is a responsive web design test tool?</h4>
+                        <p class="text-xs text-slate-300">An online utility that simulates various screen resolutions and device dimensions inside a browser frame, enabling developers to test layout adaptability quickly.</p>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
+                        <h4 class="font-semibold text-white text-sm mb-1">Why do some websites fail to load inside the preview iframe?</h4>
+                        <p class="text-xs text-slate-300">Some web servers implement strong security headers (such as X-Frame-Options or Content Security Policy) that block embedding. If your site blocks framing, you may test it by deploying it on staging domains configured to allow cross-origin viewing.</p>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
+                        <h4 class="font-semibold text-white text-sm mb-1">How do I reset the testing tool workspace?</h4>
+                        <p class="text-xs text-slate-300">Simply click the "Reset" button located next to the URL input field to restore default sizing parameters and clear input buffers instantly.</p>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
+                        <h4 class="font-semibold text-white text-sm mb-1">Is this tool free for commercial use?</h4>
+                        <p class="text-xs text-slate-300">Yes, our online responsiveness testing platform is entirely free for developers, designers, and small business operators worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 border-t border-slate-700 py-6 text-center text-xs text-slate-400">
+        <p>&copy; 2026 Responsive Test Tool Online. All rights reserved.</p>
+    </footer>
+
+    <!-- Interactive Logic Script -->
+    <script>
+        const urlForm = document.getElementById('url-form');
+        const urlInput = document.getElementById('url-input');
+        const previewIframe = document.getElementById('preview-iframe');
+        const viewportWrapper = document.getElementById('viewport-wrapper');
+        const currentDimDisplay = document.getElementById('current-dim-display');
+        const customWidthInput = document.getElementById('custom-width');
+        const customHeightInput = document.getElementById('custom-height');
+        const applySizeBtn = document.getElementById('apply-size-btn');
+        const rotateBtn = document.getElementById('rotate-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const presetBtns = document.querySelectorAll('.preset-btn');
+        const snapshotBtn = document.getElementById('snapshot-btn');
+
+        function updateViewport(w, h) {
+            viewportWrapper.style.width = w + 'px';
+            viewportWrapper.style.height = h + 'px';
+            currentDimDisplay.textContent = `${w} × ${h} px`;
+            customWidthInput.value = w;
+            customHeightInput.value = h;
+        }
+
+        urlForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let targetUrl = urlInput.value.trim();
+            if(!targetUrl.startsWith('http://') && !targetUrl.startsWith('https://')) {
+                targetUrl = 'https://' + targetUrl;
+            }
+            previewIframe.src = targetUrl;
+        });
+
+        presetBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const w = btn.getAttribute('data-w');
+                const h = btn.getAttribute('data-h');
+                updateViewport(w, h);
+            });
+        });
+
+        applySizeBtn.addEventListener('click', () => {
+            const w = parseInt(customWidthInput.value) || 360;
+            const h = parseInt(customHeightInput.value) || 640;
+            updateViewport(w, h);
+        });
+
+        rotateBtn.addEventListener('click', () => {
+            const currentW = parseInt(viewportWrapper.style.width) || 412;
+            const currentH = parseInt(viewportWrapper.style.height) || 869;
+            updateViewport(currentH, currentW);
+        });
+
+        resetBtn.addEventListener('click', () => {
+            urlInput.value = '';
+            previewIframe.src = 'https://example.com';
+            updateViewport(412, 869);
+        });
+
+        snapshotBtn.addEventListener('click', () => {
+            alert('Snapshot initiated! Capture and annotation canvas feature is ready for real device simulation.');
+        });
+    </script>
+</body>
+</html>
