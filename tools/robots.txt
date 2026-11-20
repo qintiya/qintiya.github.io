@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /tools/
+Allow: /tools/*
+
+Sitemap: https://awdev.eu.org/tools/sitemap.xml
