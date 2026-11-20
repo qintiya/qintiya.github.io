@@ -201,3 +201,20 @@
 
   initialize();
 })();
+
+function openTool(button) {
+  dialogTitle.textContent = button.dataset.name;
+  dialogCategory.textContent = button.dataset.category;
+
+  const id = button.dataset.id;
+
+  if (window.AWDEV_DEVELOPER?.ids.includes(id)) {
+    window.AWDEV_DEVELOPER.open(id);
+  } else if (window.AWDEV_ISLAMIC?.ids.includes(id)) {
+    window.AWDEV_ISLAMIC.open(id);
+  } else {
+    tools.open(id);
+  }
+
+  dialog.showModal();
+}
