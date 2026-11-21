@@ -218,3 +218,20 @@ function openTool(button) {
 
   dialog.showModal();
 }
+const selectedTool = new URLSearchParams(window.location.search).get("id");
+
+if (selectedTool) {
+  const matchingCard = document.querySelector(
+    `.open-tool[data-id="${CSS.escape(selectedTool)}"]`
+  );
+
+  if (matchingCard) {
+    requestAnimationFrame(() => matchingCard.click());
+  }
+}
+
+document.getElementById("themeToggle").addEventListener("click", () => {
+  const isDark = document.documentElement.dataset.theme === "dark";
+  document.documentElement.dataset.theme = isDark ? "light" : "dark";
+  localStorage.setItem("awdevTheme", isDark ? "light" : "dark");
+});
