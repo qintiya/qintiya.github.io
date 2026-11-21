@@ -1,0 +1,26 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches: [ "main" ]
+  schedule:
+    - cron: "0 2 * * *" # Jalan otomatis tiap jam 02:00 UTC
+
+jobs:
+  build-sitemap:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests beautifulsoup4
+      - run: python generate_sitemap.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml sitemap.html
+          git diff --staged --quiet || git commit -m "chore: update automatic sitemap"
+          git push
